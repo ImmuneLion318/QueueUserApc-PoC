@@ -81,9 +81,6 @@ public static class ApcInjection
         IntPtr SystemArgument2,
         IntPtr SystemArgument3);
 
-    [DllImport("ntdll.dll")]
-    public static extern NtStatus NtTestAlert();
-
     #endregion
 
     #region Kernel32
@@ -228,9 +225,6 @@ public static class ApcInjection
             IntPtr.Zero,
             IntPtr.Zero,
             IntPtr.Zero);
-
-        /* Test Our Alert */
-        NtTestAlert();
 
         return Status == NtStatus.Success;
     }
